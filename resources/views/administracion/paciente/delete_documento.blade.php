@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
                 </div>
 
             </form>

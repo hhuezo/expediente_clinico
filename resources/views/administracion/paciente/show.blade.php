@@ -27,6 +27,10 @@
                 margin-block-start: -18rem;
             }
         }
+
+        .tab-pane {
+            min-height: 535px;
+        }
     </style>
 
 
@@ -42,9 +46,9 @@
             <button class="btn btn-white btn-wave">
                 <i class="ri-filter-3-line align-middle me-1 lh-1"></i> Filter
             </button> --}}
-        <a href="{{url('paciente')}}"> <button class="btn btn-primary btn-wave me-0">
-            <i class="bi bi-arrow-90deg-left"></i>
-        </button></a>
+        <a href="{{ url('paciente') }}"> <button class="btn btn-primary btn-wave me-0">
+                <i class="bi bi-arrow-90deg-left"></i>
+            </button></a>
     </div>
     </div>
     <!-- Page Header Close -->
@@ -127,15 +131,7 @@
                             </div>
                         </div>
                         <div class="col-xl-9">
-                            @if (count($errors) > 0)
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+
 
                             @if (session('success'))
                                 <script>
@@ -152,6 +148,18 @@
 
                             <div class="card custom-card overflow-hidden border">
                                 <div class="card-body">
+
+                                    @if (count($errors) > 0)
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
+
                                     <ul class="nav nav-tabs tab-style-6 mb-3 p-0" id="myTab" role="tablist">
 
                                         <li class="nav-item" role="presentation">
@@ -180,12 +188,12 @@
                                                 type="button" role="tab" aria-controls="gallery-tab-pane"
                                                 aria-selected="false">Documentos</button>
                                         </li>
-                                        {{-- <li class="nav-item" role="presentation">
-                                            <button class="nav-link w-100 text-start" id="documentos-tab"
-                                                data-bs-toggle="tab" data-bs-target="#documentos-tab-pane" type="button"
-                                                role="tab" aria-controls="documentos-tab-pane"
-                                                aria-selected="false">Friends</button>
-                                        </li> --}}
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link w-100 text-start {{ $tab == 5 ? 'active' : '' }}"
+                                                id="citas-tab" data-bs-toggle="tab" data-bs-target="#citas-tab-pane"
+                                                type="button" role="tab" aria-controls="citas-tab-pane"
+                                                aria-selected="false">Citas</button>
+                                        </li>
                                     </ul>
                                     <div class="tab-content" id="profile-tabs">
                                         <div class="tab-pane {{ $tab == 1 ? 'show active' : '' }} p-0 border-0"
@@ -410,7 +418,8 @@
                                                             </td>
                                                             <td>{{ $documento->descripcion }}</td>
                                                             <td>
-                                                                <a href="{{ asset('storage/documentos') }}/{{$documento->archivo}}" target="_blank">
+                                                                <a href="{{ asset('storage/documentos') }}/{{ $documento->archivo }}"
+                                                                    target="_blank">
                                                                     <button class="btn btn-sm btn-info btn-wave">
                                                                         &nbsp;<i class="ri-eye-line"></i>&nbsp;
                                                                     </button>
@@ -433,468 +442,64 @@
                                                 </tbody>
                                             </table>
                                         </div>
-                                        {{-- <div class="tab-pane p-0 border-0" id="documentos-tab-pane" role="tabpanel"
-                                            aria-labelledby="documentos-tab" tabindex="0">
-                                            <div class="row">
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/2.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <a href="javascript:void(0);"
-                                                                        class="mb-0 fw-semibold">Della Jasmine</a>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        dellajasmine117@gmail.com</p>
-                                                                    <span class="badge bg-info-transparent">Product
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                        <div class="tab-pane {{ $tab == 5 ? 'show active' : '' }} p-0 border-0"
+                                            id="citas-tab-pane" role="tabpanel" aria-labelledby="citas-tab"
+                                            tabindex="0">
+                                            <div class="card-header justify-content-between">
+                                                <div class="card-title">
+                                                    Citas
                                                 </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/15.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Danny Raj</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        dannyraj658@gmail.com</p>
-                                                                    <span class="badge bg-success-transparent">UI
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/5.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Catalina Keira</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        catalinakeira023@gmail.com</p>
-                                                                    <span class="badge bg-info-transparent">Product
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/11.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Priceton Gray</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        pricetongray451@gmail.com</p>
-                                                                    <span class="badge bg-warning-transparent">Team
-                                                                        Manager</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/7.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Sarah Ruth</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        sarahruth45@gmail.com</p>
-                                                                    <span class="badge bg-info-transparent">Product
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/12.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Mahira Hose</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        mahirahose9456@gmail.com</p>
-                                                                    <span class="badge bg-info-transparent">Product
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/1.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Victoria Gracie</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        victoriagracie@gmail.com</p>
-                                                                    <span class="badge bg-info-transparent">Product
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/13.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Amith Gray</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        amithgray132@gmail.com</p>
-                                                                    <span class="badge bg-info-transparent">Product
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xxl-4 col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                                                    <div class="card custom-card shadow-none border">
-                                                        <div class="card-body">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span
-                                                                    class="avatar avatar-xl avatar-rounded flex-shrink-0">
-                                                                    <img src="../assets/images/faces/6.jpg"
-                                                                        alt="">
-                                                                </span>
-                                                                <div class="text-truncate">
-                                                                    <p class="mb-0 fw-semibold">Isha Bella</p>
-                                                                    <p
-                                                                        class="w-75 text-truncate fs-12 op-7 mb-1 text-muted">
-                                                                        ishabella255@gmail.com</p>
-                                                                    <span class="badge bg-info-transparent">Product
-                                                                        Designer</span>
-                                                                </div>
-                                                                <div class="dropdown ms-auto">
-                                                                    <a aria-label="anchor"
-                                                                        class="btn btn-secondary-light btn-icon btn-sm btn-wave"
-                                                                        href="javascript:void(0);"
-                                                                        data-bs-toggle="dropdown">
-                                                                        <i class="ri-more-2-fill"></i>
-                                                                    </a>
-                                                                    <ul class="dropdown-menu dropdown-menu-end"
-                                                                        role="menu">
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Message</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Block</a>
-                                                                        </li>
-                                                                        <li><a class="dropdown-item"
-                                                                                href="javascript:void(0);">Remove</a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer text-center p-3">
-                                                            <div class="d-flex gap-2 flex-wrap justify-content-center">
-                                                                <button
-                                                                    class="btn btn-sm btn-primary-light btn-wave me-0">View
-                                                                    Profile</button>
-                                                                <button
-                                                                    class="btn btn-sm btn-light btn-wave me-0">Unfollow</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-12">
-                                                    <div class="text-center">
-                                                        <button class="btn btn-primary-light btn-wave">Show
-                                                            All</button>
-                                                    </div>
+                                                <div class="prism-toggle">
+                                                    <button class="btn btn-primary" data-bs-toggle="modal"
+                                                        data-bs-target="#modal-create-cita"><i
+                                                            class="bi bi-plus-circle"></i> Agregar</button>
                                                 </div>
                                             </div>
-                                        </div> --}}
+
+                                            <table class="table table-bordered table-striped">
+                                                <thead class="table-primary">
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Fecha</th>
+                                                        <th>Horario</th>
+                                                        <th>Comentario</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @php($i = 1)
+                                                    @foreach ($paciente->citas as $cita)
+                                                        <tr>
+                                                            <td>{{ $i }}</td>
+                                                            <td>{{ $cita->fecha ? \Carbon\Carbon::parse($cita->fecha)->format('d/m/Y') : '' }}
+                                                            </td>
+                                                            <td>{{ $cita->hora_inicio ? \Carbon\Carbon::parse($cita->hora_inicio)->format('H:i') : '' }}
+                                                                -
+                                                                {{ $cita->hora_final ? \Carbon\Carbon::parse($cita->hora_final)->format('H:i') : '' }}
+                                                            </td>
+                                                            <td>{{ $cita->actividad }}</td>
+                                                            <td>
+                                                                <button class="btn btn-sm btn-info btn-wave"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#edit-cita-{{ $cita->id }}">
+                                                                    &nbsp;<i class="ri-edit-line"></i>&nbsp;</button>
+                                                                &nbsp;
+                                                                <button type="button" class="btn btn-sm btn-danger"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#delete-cita-{{ $cita->id }}">&nbsp;<i
+                                                                        class="bi bi-trash-fill"></i>&nbsp;</button>
+
+
+                                                            </td>
+                                                        </tr>
+                                                        @include('administracion.paciente.edit_cita')
+                                                        @include('administracion.paciente.delete_cita')
+                                                        @php($i++)
+                                                    @endforeach
+
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1051,11 +656,65 @@
         </div>
     </div>
 
+
+    <div class="modal fade" id="modal-create-cita" tabindex="-1" aria-labelledby="exampleModalLgLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title" id="exampleModalLgLabel">Crear cita</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST" action="{{ route('paciente.cita') }}">
+                    @csrf
+                    <div class="modal-body">
+
+
+                        <div class="row gy-4">
+                            <input type="hidden" class="form-control" name="paciente_id" value="{{ $paciente->id }}"
+                                required>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <label for="input-label" class="form-label">Fecha:</label>
+                                <input type="date" class="form-control" name="fecha" value="{{ date('Y-m-d') }}"
+                                    required>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <label for="input-label" class="form-label">Hora inicio:</label>
+                                <input type="time" class="form-control" name="hora_inicio"
+                                    value="{{ old('hora_inicio') }}" required>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <label for="input-label" class="form-label">Hora final:</label>
+                                <input type="time" class="form-control" name="hora_final"
+                                    value="{{ old('hora_final') }}" required>
+                            </div>
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                <label for="input-label" class="form-label">Actividad:</label>
+                                <textarea name="actividad" class="form-control">{{ old('actividad') }}</textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+
+                </form>
+            </div>
+
+            </form>
+        </div>
+    </div>
+
+
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const inputArchivo = document.getElementById('archivo');
 
-            inputArchivo.addEventListener('change', function () {
+            inputArchivo.addEventListener('change', function() {
                 const file = this.files[0];
                 if (file && file.size > 2 * 1024 * 1024) { // 2MB
                     toastr.error('El archivo no debe pesar más de 2MB');
