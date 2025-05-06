@@ -437,6 +437,11 @@
                                         class="side-menu__item">Pacientes</a>
                                 </li>
 
+                                <li class="slide">
+                                    <a href="{{ url('cita/calendario') }}" id="calendarioOption"
+                                        class="side-menu__item">Agenda de citas</a>
+                                </li>
+
                             </ul>
                         </li>
                         <!-- End::slide -->

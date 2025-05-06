@@ -64,7 +64,7 @@
                                             </label></td>
 
                                         <td>
-                                            <button class="btn btn-sm btn-warning btn-wave" data-bs-toggle="modal"
+                                            <button class="btn btn-sm btn-info btn-wave" data-bs-toggle="modal"
                                                 data-bs-target="#modal-edit-{{ $item->id }}">
                                                 &nbsp;<i class="ri-edit-line align-middle me-2 d-inline-block"></i></button>
                                         </td>

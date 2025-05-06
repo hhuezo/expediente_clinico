@@ -100,13 +100,13 @@
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <label class="form-label">Nombre:</label>
                                         <input type="text" class="form-control" name="nombre" oninput="this.value = this.value.toUpperCase()"
-                                            value="{{ old('nombre') }}" required>
+                                        value="{{ $result['nombre'] ?? old('nombre') }}" required>
                                     </div>
 
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <label class="form-label">Apellido:</label>
                                         <input type="text" class="form-control" name="apellido" oninput="this.value = this.value.toUpperCase()"
-                                            value="{{ old('apellido') }}" required>
+                                        value="{{ $result['apellido'] ?? old('apellido') }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +161,7 @@
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <label class="form-label">Documento:</label>
                                         <input type="text" class="form-control" name="documento"
-                                            value="{{ old('documento') }}">
+                                            value="{{ $result['documento'] ?? old('documento') }}">
 
                                     </div>
 

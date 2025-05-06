@@ -1,0 +1,99 @@
+2025-05-06 10:50:06,976 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 10:50:06,976 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 10:50:09,597 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 10:50:09,908 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 10:50:35,640 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 10:50:35,641 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellidos': 'HuEzo BARAHONA'}
+2025-05-06 10:50:35,641 - DEBUG - Dui: 03544132-0
+2025-05-06 10:50:35,641 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 10:50:35,641 - DEBUG - Apellidos: HuEzo BARAHONA
+2025-05-06 10:51:27,147 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 10:51:27,147 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 10:51:29,623 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 10:51:29,906 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 10:51:55,700 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 10:51:55,700 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellidos': 'HuEzo BARAHONA'}
+2025-05-06 10:51:55,701 - DEBUG - Dui: 03544132-0
+2025-05-06 10:51:55,701 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 10:51:55,701 - DEBUG - Apellidos: HuEzo BARAHONA
+2025-05-06 10:56:28,478 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 10:56:28,478 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 10:56:31,465 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 10:56:31,753 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 10:56:58,047 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 10:56:58,047 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellidos': 'HuEzo BARAHONA'}
+2025-05-06 10:56:58,047 - DEBUG - Dui: 03544132-0
+2025-05-06 10:56:58,048 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 10:56:58,048 - DEBUG - Apellidos: HuEzo BARAHONA
+2025-05-06 11:02:55,143 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:02:55,144 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:02:58,046 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:02:58,323 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:03:24,403 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 11:03:24,404 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellidos': 'HuEzo BARAHONA'}
+2025-05-06 11:03:24,404 - DEBUG - Dui: 03544132-0
+2025-05-06 11:03:24,404 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 11:03:24,404 - DEBUG - Apellidos: HuEzo BARAHONA
+2025-05-06 11:05:37,973 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:05:37,973 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:05:40,785 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:05:41,011 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:05:50,567 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID ADclliaos Surname Huezo BARAHONA Nombre Grven HUGO ALEXANDER Conocido por Known Dy Genero Gender Salvadorcno Dor / Salvadorcan by Mgary Fecha de NBCACIMJENIOand Date ot Bit 1 Apopa San SalvaDOR OESTE San SalvadoR 19/05/1986 echa de Expedición Place and Date MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Exprracion Date of Erpiration 07/03/2033 22.05298c Numero unica 8ev Unaveybmbe Firma Huella del Titular Registro Nacional ge 03544132-0 Holder Signature las Personas Naturales Name: Lugar
+2025-05-06 11:05:50,567 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': None, 'apellidos': None}
+2025-05-06 11:05:50,567 - DEBUG - Dui: 03544132-0
+2025-05-06 11:05:50,567 - DEBUG - Nombre: None
+2025-05-06 11:05:50,568 - DEBUG - Apellidos: None
+2025-05-06 11:06:26,679 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:06:26,680 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:06:30,039 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:06:30,262 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:06:40,095 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID ADclliaos Surname Huezo BARAHONA Nombre Grven HUGO ALEXANDER Conocido por Known Dy Genero Gender Salvadorcno Dor / Salvadorcan by Mgary Fecha de NBCACIMJENIOand Date ot Bit 1 Apopa San SalvaDOR OESTE San SalvadoR 19/05/1986 echa de Expedición Place and Date MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Exprracion Date of Erpiration 07/03/2033 22.05298c Numero unica 8ev Unaveybmbe Firma Huella del Titular Registro Nacional ge 03544132-0 Holder Signature las Personas Naturales Name: Lugar
+2025-05-06 11:06:40,095 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': None, 'apellidos': None}
+2025-05-06 11:06:40,096 - DEBUG - Dui: 03544132-0
+2025-05-06 11:06:40,096 - DEBUG - Nombre: None
+2025-05-06 11:06:40,096 - DEBUG - Apellidos: None
+2025-05-06 11:10:09,154 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:10:09,154 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:10:12,120 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:10:12,411 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:10:38,299 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 11:10:38,299 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellidos': 'HuEzo BARAHONA'}
+2025-05-06 11:10:38,299 - DEBUG - Dui: 03544132-0
+2025-05-06 11:10:38,299 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 11:10:38,300 - DEBUG - Apellidos: HuEzo BARAHONA
+2025-05-06 11:11:32,403 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:11:32,403 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:11:35,532 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:11:35,824 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:12:02,280 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 11:12:02,281 - INFO - Datos extraídos: {'dui': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellidos': 'HuEzo BARAHONA'}
+2025-05-06 11:12:02,281 - DEBUG - Dui: 03544132-0
+2025-05-06 11:12:02,281 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 11:12:02,281 - DEBUG - Apellidos: HuEzo BARAHONA
+2025-05-06 11:15:39,181 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:15:39,181 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:15:41,886 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:15:42,185 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:16:07,529 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 11:16:07,529 - INFO - Datos extraídos: {'documento': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellidos': 'HuEzo BARAHONA'}
+2025-05-06 11:16:07,529 - DEBUG - Documento: 03544132-0
+2025-05-06 11:16:07,529 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 11:16:07,529 - DEBUG - Apellidos: HuEzo BARAHONA
+2025-05-06 11:16:41,758 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:16:41,758 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:16:44,500 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:16:44,805 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:17:10,169 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 11:17:10,169 - INFO - Datos extraídos: {'documento': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellido': 'HuEzo BARAHONA'}
+2025-05-06 11:17:10,169 - DEBUG - Documento: 03544132-0
+2025-05-06 11:17:10,169 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 11:17:10,169 - DEBUG - Apellido: HuEzo BARAHONA
+2025-05-06 11:19:04,229 - DEBUG - Ruta de la imagen: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:19:04,230 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2025-05-06 11:19:07,598 - INFO - Intentando abrir la imagen en: C:\xampp\htdocs\clinica\public\documentos\dui.jpg
+2025-05-06 11:19:07,906 - INFO - Imagen redimensionada y guardada como 'dui_resized.jpg'.
+2025-05-06 11:19:36,805 - DEBUG - Texto extraído completo: REPÚBLICA DE EL SALVADOR Documento Único de Identidad / ID Apellidos Surname HuEzo BARAHONA Nombre / Given Names HUGO ALEXANDER Conocido por Known by Gonero Gender Salvadoreno por Salvadorean by Mgary Fecha de NBCACENAIENIOand ol Birtk 1 APOPA; SAN SALVADOR OESTE San SalVadoR 19103/1986 Lugary Fecha de Expedición Place and Date of Issuapce MEJICANOS, SAN SALVADOR CENTRO; SAN SALVADOR 08/03/2025 Fecha de Expiración Date o} Expiration 07/03/2033 29252986 Número 888ey8R{898 Umave nbok Firma 0 Huella del Titular Registo Nacional ae 03544132-0 Holder $ Signature las Personas Naturales Dare
+2025-05-06 11:19:36,806 - INFO - Datos extraídos: {'documento': '03544132-0', 'nombre': 'HUGO ALEXANDER', 'apellido': 'HuEzo BARAHONA'}
+2025-05-06 11:19:36,806 - DEBUG - Documento: 03544132-0
+2025-05-06 11:19:36,806 - DEBUG - Nombre: HUGO ALEXANDER
+2025-05-06 11:19:36,806 - DEBUG - Apellido: HuEzo BARAHONA

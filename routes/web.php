@@ -36,6 +36,15 @@ Route::middleware(['auth'])->group(function () {
     Route::put('paciente/cita/update/{id}',  [CitaController::class,'update'])->name('paciente.cita.update');
     Route::delete('paciente/cita/destroy/{id}',  [CitaController::class,'destroy'])->name('paciente.cita.destroy');
 
+    Route::get('cita/calendario', [CitaController::class, 'calendario']);
+    Route::get('cita/calendario/get_eventos/{mes}/{anio}', [CitaController::class, 'get_eventos']);
+    Route::get('cita/calendario/get_lista_eventos/{mes}/{anio}', [CitaController::class, 'get_lista_eventos']);
+    Route::post('cita/store_cita', [CitaController::class, 'calendario_store_cita']);
+
+
+
+    Route::get('paciente/carga_documento', [PacienteController::class,'carga_documento']);
+    Route::post('paciente/carga_documento', [PacienteController::class,'procesar_documento']);
     Route::post('paciente/documento', [DocumentoController::class,'store'])->name('paciente.documento');
     Route::delete('paciente/documento/destroy/{id}', [DocumentoController::class,'destroy'])->name('paciente.documento.destroy');
     Route::get('paciente/get_distritos/{id}', [PacienteController::class,'get_distritos']);
@@ -49,7 +58,6 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::resource('consulta', ConsultaController::class);
-
 
 
     //catalogos

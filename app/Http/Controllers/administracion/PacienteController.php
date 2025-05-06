@@ -118,7 +118,7 @@ class PacienteController extends Controller
 
         $tipos_vacuna = TipoVacuna::get();
 
-        return view('administracion.paciente.show', compact('paciente', 'edad', 'tab','lugares_consulta','tipos_vacuna'));
+        return view('administracion.paciente.show', compact('paciente', 'edad', 'tab', 'lugares_consulta', 'tipos_vacuna'));
     }
 
 
@@ -248,7 +248,6 @@ class PacienteController extends Controller
 
 
             return Redirect::to('paciente/' . $id . '?tab=1')->with('success', 'Paciente modificado correctamente.');
-
         } catch (\Exception $e) {
             Log::error('Error al actualizar paciente con ID: ' . $id, [
                 'error' => $e->getMessage(),
@@ -290,4 +289,78 @@ class PacienteController extends Controller
         }
     }
 
+
+    public function carga_documento()
+    {
+        return view('administracion.paciente.documentos');
+    }
+
+
+    public function procesar_documento(Request $request)
+    {
+        try {
+            // Paso 1: Verificar si se ha subido un archivo
+            if (!$request->hasFile('frente')) {
+                return back()->withErrors(['error' => "No se ha recibido ninguna imagen."]);
+            }
+
+            // Paso 2: Ruta física al directorio public/documentos
+            $publicPath = public_path('documentos');
+
+            // Paso 3: Crear la carpeta si no existe
+            if (!file_exists($publicPath)) {
+                mkdir($publicPath, 0755, true);
+            }
+
+            // Paso 4: Guardar la imagen como dui.jpg en public/documentos
+            $imageName = 'dui.jpg';
+            $resizedImageName = 'dui_resized.jpg';
+
+            $duiPath = $publicPath . DIRECTORY_SEPARATOR . $imageName;
+            $duiResizedPath = $publicPath . DIRECTORY_SEPARATOR . $resizedImageName;
+
+            // Eliminar imágenes si ya existen
+            if (file_exists($duiPath)) {
+                unlink($duiPath);
+            }
+            if (file_exists($duiResizedPath)) {
+                unlink($duiResizedPath);
+            }
+            $request->file('frente')->move($publicPath, $imageName);
+
+            // Paso 5: Ruta completa a la imagen en el directorio público
+            $fullImagePath = $publicPath . DIRECTORY_SEPARATOR . $imageName;
+
+            // Paso 6: Verificar que la imagen exista
+            if (!file_exists($fullImagePath)) {
+                return back()->withErrors(['error' => "El archivo no se encuentra en la ruta: $fullImagePath"]);
+            }
+
+            // Paso 7: Ruta al script de Python
+            $pythonScript = base_path('ocr/ocr.py');
+
+            // Paso 8: Ejecutar el script de Python
+            $command = escapeshellcmd("python \"$pythonScript\" \"$fullImagePath\"");
+            $output = shell_exec($command);
+
+            if ($output === null) {
+                return back()->withErrors(['error' => "No se pudo ejecutar el script de Python."]);
+            }
+
+            // Paso 9: Decodificar JSON
+            $result = json_decode($output, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                return back()->withErrors(['error' => "El resultado del script no es un JSON válido."]);
+            }
+
+            // Paso 10: Retornar la vista con los resultados
+            $paises = Pais::where('activo', 1)->get();
+            $estados_civiles = EstadoCivil::get();
+            $departamentos = Departamento::get();
+            return view('administracion.paciente.create', compact('paises', 'estados_civiles', 'departamentos', 'result'));
+        } catch (\Exception $e) {
+            // Paso final: Manejar excepciones
+            return back()->withErrors(['error' => 'Error procesando el documento: ' . $e->getMessage()]);
+        }
+    }
 }

@@ -26,9 +26,17 @@
                     <div class="card-title">
                         Listado de pacientes
                     </div>
-                    <div class="prism-toggle">
-                        <a href="{{ url('paciente/create') }}"> <button class="btn btn-primary">Nuevo</button></a>
+
+                    <div class="btn-list">
+                        {{-- <a href="{{ url('paciente/carga_documento') }}"><button class="btn btn-white btn-wave">
+                            <i class="bi bi-image"></i> Cargar documento
+                        </button></a> --}}
+                        <a href="{{ url('paciente/create') }}"><button class="btn btn-primary btn-wave me-0">Nuevo
+                        </button></a>
                     </div>
+                    {{-- <div class="prism-toggle">
+                        <a href="{{ url('paciente/create') }}"> <button class="btn btn-primary">Nuevo</button></a>
+                    </div> --}}
                 </div>
                 <div class="card-body">
 
