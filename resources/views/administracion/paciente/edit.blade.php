@@ -82,7 +82,7 @@
                         @endif
 
                         <div class="row gy-4">
-                            {{-- Foto --}}
+                                {{-- Foto --}}
                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                                 <div class="card-body border-bottom border-block-end-dashed">
                                     <div class="text-center">
@@ -112,10 +112,40 @@
                                             oninput="this.value = this.value.toUpperCase()"
                                             value="{{ old('apellido', $paciente->apellido) }}" required>
                                     </div>
+
+
                                 </div>
                             </div>
 
-                            {{-- Sexo y Correo --}}
+                            <div class="col-xl-6" >
+                                <label class="form-label">Fecha de nacimiento:</label>
+                                <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"
+                                    value="{{ old('fecha_nacimiento', $paciente->fecha_nacimiento ? \Carbon\Carbon::parse($paciente->fecha_nacimiento)->format('Y-m-d') : '') }}"
+                                    required>
+                            </div>
+
+
+                            <div class="col-xl-6">
+                                <label class="form-label">Documento:</label>
+                                <input type="text" class="form-control" name="documento"
+                                    value="{{ old('documento', $paciente->documento) }}">
+                            </div>
+
+
+                            <div class="col-xl-6">
+                                <label class="form-label">Estado civil:</label>
+                                <select class="form-select" name="estado_civil_id" required>
+                                    <option value="">Seleccione</option>
+                                    @foreach ($estados_civiles as $estado)
+                                        <option value="{{ $estado->id }}"
+                                            {{ old('estado_civil_id', $paciente->estado_civil_id) == $estado->id ? 'selected' : '' }}>
+                                            {{ $estado->nombre }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+
                             <div class="col-xl-6">
                                 <label class="form-label">Sexo:</label>
                                 <select class="form-select" name="sexo" required>
@@ -127,6 +157,13 @@
                                 </select>
                             </div>
 
+                            {{-- Sexo y Correo --}}
+                            <div class="col-xl-6">
+                                <label class="form-label">Ocupación:</label>
+                                <input type="text" class="form-control" name="ocupacion"
+                                value="{{ old('ocupacion', $paciente->ocupacion) }}">
+                            </div>
+
                             <div class="col-xl-6">
                                 <label class="form-label">Correo:</label>
                                 <input type="email" class="form-control" name="correo"
@@ -134,32 +171,17 @@
                             </div>
 
                             {{-- Fecha de nacimiento y Edad --}}
-                            <div class="col-xl-6">
-                                <label class="form-label">Fecha de nacimiento:</label>
-                                <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento"
-                                    value="{{ old('fecha_nacimiento', $paciente->fecha_nacimiento ? \Carbon\Carbon::parse($paciente->fecha_nacimiento)->format('Y-m-d') : '') }}"
-                                    required>
-                            </div>
 
-                            <div class="col-xl-6">
+
+                            {{-- <div class="col-xl-6">
                                 <label class="form-label">Edad:</label>
                                 <input type="text" class="form-control" id="edad"
                                     value="{{ old('edad', $paciente->fecha_nacimiento ? \Carbon\Carbon::parse($paciente->fecha_nacimiento)->age : '') }}"
                                     readonly>
-                            </div>
+                            </div> --}}
 
                             {{-- Teléfonos --}}
-                            <div class="col-xl-6">
-                                <label class="form-label">Teléfono fijo:</label>
-                                <input type="text" class="form-control" name="telefono_fijo" id="telefono_fijo"
-                                    value="{{ old('telefono_fijo', $paciente->telefono_fijo) }}">
-                            </div>
 
-                            <div class="col-xl-6">
-                                <label class="form-label">Teléfono celular:</label>
-                                <input type="text" class="form-control" name="telefono" id="telefono"
-                                    value="{{ old('telefono', $paciente->telefono) }}">
-                            </div>
 
                             {{-- Observaciones --}}
                             <div class="col-xl-6">
@@ -170,24 +192,19 @@
                             {{-- Documento y Estado civil --}}
                             <div class="col-xl-6">
                                 <div class="row gy-4">
+
                                     <div class="col-xl-12">
-                                        <label class="form-label">Documento:</label>
-                                        <input type="text" class="form-control" name="documento"
-                                            value="{{ old('documento', $paciente->documento) }}">
+                                        <label class="form-label">Teléfono fijo:</label>
+                                        <input type="text" class="form-control" name="telefono_fijo" id="telefono_fijo"
+                                            value="{{ old('telefono_fijo', $paciente->telefono_fijo) }}">
                                     </div>
 
                                     <div class="col-xl-12">
-                                        <label class="form-label">Estado civil:</label>
-                                        <select class="form-select" name="estado_civil_id" required>
-                                            <option value="">Seleccione</option>
-                                            @foreach ($estados_civiles as $estado)
-                                                <option value="{{ $estado->id }}"
-                                                    {{ old('estado_civil_id', $paciente->estado_civil_id) == $estado->id ? 'selected' : '' }}>
-                                                    {{ $estado->nombre }}
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <label class="form-label">Teléfono celular:</label>
+                                        <input type="text" class="form-control" name="telefono" id="telefono"
+                                            value="{{ old('telefono', $paciente->telefono) }}">
                                     </div>
+
                                 </div>
                             </div>
 

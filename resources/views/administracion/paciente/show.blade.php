@@ -58,8 +58,7 @@
         <div class="col-xl-12">
             <div class="card custom-card profile-card">
                 <div class="profile-banner-img">
-                    <img src="../assets/images/media/media-3.jpg" class="card-img-top" alt="...">
-
+                    <img src="{{ asset('assets/images/media/media-3.jpg')}}" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body pb-0 position-relative">
                     <div class="row profile-content">
@@ -68,7 +67,7 @@
                                 <div class="card-body border-bottom border-block-end-dashed">
                                     <div class="text-center">
                                         <span class="avatar avatar-xxl avatar-rounded online mb-3">
-                                            <img src="../assets/images/faces/11.jpg" alt="">
+                                            <img src="{{ asset('imagenes')}}/{{$paciente->foto}}" alt="">
                                         </span>
                                         <h5 class="fw-semibold mb-1">{{ $paciente->nombre }} {{ $paciente->apellido }}</h5>
                                         <span class="d-block fw-medium text-muted mb-2">{{ $paciente->ocupacion }}</span>

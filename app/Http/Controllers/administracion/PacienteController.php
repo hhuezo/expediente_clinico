@@ -183,6 +183,7 @@ class PacienteController extends Controller
             $paciente->distrito_id = $validatedData['distrito_id'] ?? null;
             $paciente->estado_civil_id = $validatedData['estado_civil_id'] ?? null;
             $paciente->direccion = $validatedData['direccion'] ?? null;
+            $paciente->ocupacion =  $request->ocupacion;
 
             $paciente->save();
 
