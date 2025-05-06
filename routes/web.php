@@ -1,0 +1,49 @@
+<?php
+
+use App\Http\Controllers\administracion\ConsultaController;
+use App\Http\Controllers\administracion\DocumentoController;
+use App\Http\Controllers\administracion\PacienteController;
+use App\Http\Controllers\administracion\VacunaController;
+use App\Http\Controllers\catalogo\ProductoController;
+use App\Http\Controllers\catalogo\TipoVacunaController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('auth/login');
+});
+
+
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    Route::post('user/update_password', [UserController::class, 'updatePassword']);
+
+
+
+
+    //expediente
+
+    Route::post('paciente/vacuna', [VacunaController::class,'store'])->name('paciente.vacuna');
+    Route::put('paciente/vacuna/update/{id}', [VacunaController::class,'update'])->name('paciente.vacuna.update');
+    Route::delete('paciente/vacuna/destroy/{id}', [VacunaController::class,'destroy'])->name('paciente.vacuna.destroy');
+
+    Route::post('paciente/documento', [DocumentoController::class,'store'])->name('paciente.documento');
+    Route::delete('paciente/documento/destroy/{id}', [DocumentoController::class,'destroy'])->name('paciente.documento.destroy');
+    Route::get('paciente/get_distritos/{id}', [PacienteController::class,'get_distritos']);
+    Route::put('paciente/update_antecedentes/{id}', [PacienteController::class,'update_antecedentes']);
+    Route::resource('paciente', PacienteController::class);
+
+    Route::post('consulta/store_receta', [ConsultaController::class,'store_receta']);
+    Route::put('/consulta/update_receta/{id}', [ConsultaController::class, 'update_receta'])->name('consulta.update_receta');
+    Route::delete('/consulta/delete_receta/{id}', [ConsultaController::class, 'delete_receta'])->name('consulta.delete_receta');
+
+    Route::resource('consulta', ConsultaController::class);
+
+    //catalogos
+    Route::resource('producto', ProductoController::class);
+    Route::resource('tipo_vacuna', TipoVacunaController::class);
+
+});
